@@ -1,0 +1,28 @@
+CREATE TABLE `user_tb` (
+`user_id` INT AUTO_INCREMENT  PRIMARY KEY,
+`department_id` INT NOT NULL,
+`password` VARCHAR(250) NOT NULL,
+`name` VARCHAR(50) ,
+`phone_no` VARCHAR(50) ,
+`gender` VARCHAR(6) ,
+`email` VARCHAR(150) ,
+`address` VARCHAR(500) ,
+`is_manager` BIT
+);  
+
+CREATE TABLE `department_tb` (
+`department_id` INT AUTO_INCREMENT  PRIMARY KEY,
+`department_name` VARCHAR(150) NOT NULL
+);  
+
+CREATE TABLE `project_tb` (
+`project_id` INT AUTO_INCREMENT  PRIMARY KEY,
+`project_name` VARCHAR(150) NOT NULL
+);
+
+CREATE TABLE PROJECTS_USERS_TB  ( 
+ID INT NOT NULL UNIQUE,
+PROJECT_ID INT NOT NULL ,
+USER_ID INT  NOT NULL
+);
+ ALTER TABLE PROJECTS_USERS_TB  ADD CONSTRAINT PK PRIMARY KEY(PROJECT_ID,USER_ID  );

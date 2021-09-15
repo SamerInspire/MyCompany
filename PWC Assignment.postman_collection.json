@@ -1,0 +1,593 @@
+{
+	"info": {
+		"_postman_id": "17f1043a-cd29-4033-a707-278b29fe6f1b",
+		"name": "PWC Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"email\": \"AhmadO@hotmail.com\",\r\n        \"departmentId\": \"17\",\r\n        \"password\": \"AhmadO\",\r\n        \"name\": \"AhmadO\",\r\n        \"phoneNumber\": \"0789022212\",\r\n        \"gender\": \"Male\",\r\n        \"isManager\": true,\r\n        \"address\": \"Amman\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"email\": \"Ahmad@hotmail.com\",\r\n        \"password\": \"Ahmad\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/signIn",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Current User Inforomation",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbS0tLXRydWUiLCJpYXQiOjE2MzE3MzQ2NzcsImV4cCI6MTYzMTc3NzE3N30.vqmMN_wns8ZImOe7IQxPWm2HBVSUT7icvHOl1ct_tfI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/currentUserInfo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"currentUserInfo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Employees",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5Mzg5MywiZXhwIjoxNjMxNzM2MzkzfQ.9AdsWMQ38x7mt5pTKMlflfQouICXxPq8iEDymtY-IG4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/findEmployees/:orderBy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"findEmployees",
+								":orderBy"
+							],
+							"variable": [
+								{
+									"key": "orderBy",
+									"value": "department"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/api/users/deleteuser/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"deleteuser",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Khaled\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change Employee Department",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{   \"departmentId\":\"16\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/employeeDepartment/13",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"employeeDepartment",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Manage User Projects (assigne and unassign)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":28,\r\n    \"projectId\":20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/users/userProjectsManage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"users",
+								"userProjectsManage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "create project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJTYW1lckBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5MTU0NSwiZXhwIjoxNjMxNzM0MDQ1fQ.h_W3UPYHGQpY125bmA-sTx-cw12Nt9ZP2ktfxqSkcKo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectName\":\"Project X\",\r\n    \"departmentId\":17\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/projects/createproject",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"projects",
+								"createproject"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5Mzg5MywiZXhwIjoxNjMxNzM2MzkzfQ.9AdsWMQ38x7mt5pTKMlflfQouICXxPq8iEDymtY-IG4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/api/projects/deleteproject/27",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"projects",
+								"deleteproject",
+								"27"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTcwNDMxOSwiZXhwIjoxNjMxNzQ2ODE5fQ.1inFqeswF0vyZ2q3QXK_KCegIf9xGwSEAJfC4DTy90I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"projectName\":\"Project New X\",\r\n    \"departmentId\":\"25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/projects/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"projects",
+								"26"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "Create Department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departmentName\":\"BackEnd Department\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/departments/createDepartmnet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"departments",
+								"createDepartmnet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5Mzg5MywiZXhwIjoxNjMxNzM2MzkzfQ.9AdsWMQ38x7mt5pTKMlflfQouICXxPq8iEDymtY-IG4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/api/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTY5ODI0NiwiZXhwIjoxNjMxNzQwNzQ2fQ.JeHXog-u0hwzp2junZ2XNz9mJNyCpiSG_nD34aQpSf4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9000/api/departments/deleteDepartment/29",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"departments",
+								"deleteDepartment",
+								"29"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Department",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJBaG1hZEBob3RtYWlsLmNvbSIsImlhdCI6MTYzMTcwNDMxOSwiZXhwIjoxNjMxNzQ2ODE5fQ.1inFqeswF0vyZ2q3QXK_KCegIf9xGwSEAJfC4DTy90I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"departmentName\":\"IT- Information Technology\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9000/api/departments/16",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9000",
+							"path": [
+								"api",
+								"departments",
+								"16"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

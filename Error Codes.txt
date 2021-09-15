@@ -1,0 +1,22 @@
+ 0    - Success
+101 - Failed - Invalied JWT Token
+102 - Failed - User/Password not correct
+103 - Failed - Could not save the user
+104 - Failed - No user login
+105 - Failed - User not found
+106 - Unable to get JWT Token
+107 - JWT Token has expired
+108 - JWT signature does not match locally computed signature.
+109 - JWT signature does not belong to any registered user.
+110 - Unauthorized Access -need check
+111 - Failed - Missing department information 
+112 - Failed - Missing project information
+113 - Failed - Project not found
+114 - Failed - Department not found
+115 - Failed - The Department with ID:"+id+" has employees"
+116 - Failed - Please provide the full information to assigne
+
+
+-1   - Internal Error
+
+
